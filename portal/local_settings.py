@@ -1,8 +1,8 @@
 # Add to the file global_settings.py, not the local_settings.py
 # Set the default value in that file and override the value in this file
 
-import global_settings
-from global_settings import *
+#import global_settings
+from .global_settings.py import *
 import os
 DEBUG = True 
 TEMPLATE_DEBUG = DEBUG
