@@ -4,16 +4,13 @@
 from django.db import models
 from account.models import DEPT_CHOICES
 
-
 class SubDeptManager(models.Manager):
     def all(self):
                 return self.filter(close_apps=False)
 
-
-
 class SubDept(models.Model):
     """
-      Each department under Shaastra has sub-departments.
+      Each department under bthsstem has sub-departments.
       Example: Design is a Department whereas Graphic Design, Photography etc are sub-departments
 
     """
@@ -48,14 +45,14 @@ class Question(models.Model):
     def get_short_content(self):
         return "%s..." % str(self.question[:10])
 
-from coord.models import Answer, Application
+#from coord.models import Answer, Application
 
 class Comments(models.Model):
     """
     Stores comments written by Cores about an answer in an application.
     This helps the core during the interview.
     """
-    answer  = models.ForeignKey(Answer)
+    #answer  = models.ForeignKey(Answer)
     comment = models.TextField(blank=True)
     
     def __unicode__(self):
@@ -66,7 +63,7 @@ class AppComments(models.Model):
     Stores comments written by Cores about an application in general.
     This serves as a useful feedback to the aspiring coordinator who can view this at the end of selection procedure.
     """
-    app     = models.ForeignKey(Application,unique=True)
+    #app     = models.ForeignKey(Application,unique=True)
     comment = models.TextField(blank=True)
     
     def __unicode__(self):
