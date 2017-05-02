@@ -5,5 +5,11 @@ portal/local_setting.py
 templates/social.html
 	iframe src = ""
 	twitter link = ''
-
-	
+portal/core/models.py
+	Commented import of DEPT_CHOICES from account.models
+	Commented Line 55: answer = models.ForeignKey(Answer)
+	Commented Line 66: app = models.ForeignKey(Application,unique=True)
+portal/coord/models.py
+	from account.models import DEPT_CHOICES changed to from account.models import *
+portal/account/models.py
+	Commented line 6: from core.models import *
